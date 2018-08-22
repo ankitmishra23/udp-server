@@ -30,7 +30,7 @@ int main()
 	while(!(strcmp("exit",buf2))==0){
 	int len=(sizeof(sa));
 	int msg=recvfrom(server,buf,100,0,(struct sockaddr *)&sa,&len);
-	buf[msg]="\0";
+	buf[msg]='\0';
 	printf("message from client-->%s\n",buf);
 	gets(buf2);
 	sendto(server,buf2,strlen(buf2),0,(struct sockaddr *)&sa,sizeof(sa));
